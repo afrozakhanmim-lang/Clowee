@@ -73,7 +73,7 @@ const CTASection = () => {
               <Input id="restaurantName" value={form.restaurantName} onChange={(e) => update("restaurantName", e.target.value)} maxLength={100} />
             </div>
             <div>
-              <Label htmlFor="ownerName" className="text-foreground">Owner Name *</Label>
+              <Label htmlFor="ownerName" className="text-foreground">Restaurant Location *</Label>
               <Input id="ownerName" value={form.ownerName} onChange={(e) => update("ownerName", e.target.value)} maxLength={100} />
             </div>
             <div>
