@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { motion } from "framer-motion";
 import { toast } from "sonner";
 import { z } from "zod";
@@ -11,7 +12,7 @@ const formSchema = z.object({
   ownerName: z.string().trim().min(1, "Required").max(100),
   location: z.string().trim().min(1, "Required").max(200),
   phone: z.string().trim().min(1, "Required").max(20),
-  monthlyVolume: z.string().trim().max(50),
+  dailyCustomer: z.string().trim().min(1, "Required"),
 });
 
 const CTASection = () => {
@@ -20,7 +21,7 @@ const CTASection = () => {
     ownerName: "",
     location: "",
     phone: "",
-    monthlyVolume: "",
+    dailyCustomer: "",
   });
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -31,7 +32,7 @@ const CTASection = () => {
       return;
     }
     toast.success("Application submitted! We'll contact you soon.");
-    setForm({ restaurantName: "", ownerName: "", location: "", phone: "", monthlyVolume: "" });
+    setForm({ restaurantName: "", ownerName: "", location: "", phone: "", dailyCustomer: "" });
   };
 
   const update = (field: string, value: string) => setForm((p) => ({ ...p, [field]: value }));
@@ -69,12 +70,12 @@ const CTASection = () => {
           >
             <h3 className="font-heading font-bold text-lg text-foreground mb-2">Apply for Partnership</h3>
             <div>
-              <Label htmlFor="restaurantName" className="text-foreground">Restaurant Name *</Label>
-              <Input id="restaurantName" value={form.restaurantName} onChange={(e) => update("restaurantName", e.target.value)} maxLength={100} />
+              <Label htmlFor="restaurant/BusbusinessName" className="text-foreground">Restaurant/Busbusiness Name *</Label>
+              <Input id="restaurantName" value={form.restaurant/BusbusinessName} onChange={(e) => update("restaurant/BusbusinessName", e.target.value)} maxLength={100} />
             </div>
             <div>
-              <Label htmlFor="ownerName" className="text-foreground">Owner Name *</Label>
-              <Input id="ownerName" value={form.ownerName} onChange={(e) => update("ownerName", e.target.value)} maxLength={100} />
+              <Label htmlFor="Email" className="text-foreground">Email *</Label>
+              <Input id="ownerName" value={form.Email} onChange={(e) => update("Email", e.target.value)} maxLength={100} />
             </div>
             <div>
               <Label htmlFor="location" className="text-foreground">Location *</Label>
@@ -85,8 +86,17 @@ const CTASection = () => {
               <Input id="phone" value={form.phone} onChange={(e) => update("phone", e.target.value)} type="tel" maxLength={20} />
             </div>
             <div>
-              <Label htmlFor="monthlyVolume" className="text-foreground">Monthly Customer Volume</Label>
-              <Input id="monthlyVolume" value={form.monthlyVolume} onChange={(e) => update("monthlyVolume", e.target.value)} placeholder="e.g., 5000+" maxLength={50} />
+              <Label htmlFor="dailyCustomer" className="text-foreground">Daily Customer *</Label>
+              <Select value={form.dailyCustomer} onValueChange={(value) => update("dailyCustomer", value)}>
+                <SelectTrigger id="dailyCustomer">
+                  <SelectValue placeholder="Select daily customer count" />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectItem value="50">50</SelectItem>
+                  <SelectItem value="80">80</SelectItem>
+                  <SelectItem value="100">100</SelectItem>
+                </SelectContent>
+              </Select>
             </div>
             <Button variant="hero" size="lg" type="submit" className="w-full">
               Submit Application
