@@ -6,6 +6,15 @@ const Footer = () => (
         <span className="font-heading font-semibold text-foreground">Clowee</span>
         <span>by i3 Technologies</span>
       </div>
+      <div className="flex flex-col md:flex-row items-center gap-4">
+        <a href="tel:+8801234567890" className="hover:text-primary transition-colors">
+          +880 1234 567890
+        </a>
+        <span className="hidden md:inline">|</span>
+        <a href="https://example.com/contact" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">
+          Contact Us
+        </a>
+      </div>
       <p>© {new Date().getFullYear()} i3 Technologies, Dhaka, Bangladesh. All rights reserved.</p>
     </div>
   </footer>
