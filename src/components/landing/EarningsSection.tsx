@@ -24,7 +24,7 @@ const EarningsSection = () => (
         className="text-center mb-12"
       >
         <h2 className="text-3xl md:text-4xl font-heading font-bold text-foreground mb-4">
-          Estimated Earnings Overview
+          Estimated <span className="text-primary">Earnings</span> Overview
         </h2>
       </motion.div>
 

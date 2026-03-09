@@ -21,7 +21,7 @@ const MachineSpecsSection = () => (
         className="text-center mb-12"
       >
         <h2 className="text-3xl md:text-4xl font-heading font-bold text-foreground mb-4">
-          Machine Specifications
+          Machine <span className="text-primary">Specifications</span>
         </h2>
         <p className="text-muted-foreground text-lg">
           Professional-grade claw machine built for reliability and performance
