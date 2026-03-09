@@ -199,11 +199,11 @@ const PartnersSection = () => {
               transition={{ duration: 0.4, delay: index * 0.15 }}
               onClick={() => setSelectedVideo(video.videoUrl)}
             >
-              <div className="aspect-video relative overflow-hidden">
+              <div className="aspect-video relative overflow-hidden bg-black">
                 <img
                   src={video.thumbnail}
                   alt={video.title}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300"
                   loading="lazy"
                 />
                 <div className="absolute inset-0 bg-foreground/20 flex items-center justify-center group-hover:bg-foreground/30 transition-colors">
