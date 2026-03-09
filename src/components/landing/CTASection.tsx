@@ -77,8 +77,8 @@ const CTASection = () => {
               <Input id="ownerName" value={form.ownerName} onChange={(e) => update("ownerName", e.target.value)} maxLength={100} />
             </div>
             <div>
-              <Label htmlFor="location" className="text-foreground">Location *</Label>
-              <Input id="location" value={form.location} onChange={(e) => update("location", e.target.value)} placeholder="Area, Dhaka" maxLength={200} />
+              <Label htmlFor="location" className="text-foreground">Email *</Label>
+              <Input id="location" value={form.location} onChange={(e) => update("location", e.target.value)} placeholder="example@email.com" maxLength={200} type="email" />
             </div>
             <div>
               <Label htmlFor="phone" className="text-foreground">Phone Number *</Label>
@@ -86,19 +86,20 @@ const CTASection = () => {
             </div>
             <div>
               <Label className="text-foreground mb-3 block">Daily Customer *</Label>
-              <div className="grid grid-cols-3 gap-3">
+              <div className="space-y-2">
                 {["50", "80", "100"].map((value) => (
                   <button
                     key={value}
                     type="button"
                     onClick={() => update("dailyCustomer", value)}
-                    className={`p-4 rounded-lg border-2 font-semibold transition-all ${
+                    className={`w-full flex items-center justify-between p-3 rounded-lg border-2 font-semibold transition-all ${
                       form.dailyCustomer === value
-                        ? "border-primary bg-primary text-white"
+                        ? "border-primary bg-primary/10 text-primary"
                         : "border-border bg-card text-foreground hover:border-primary/50"
                     }`}
                   >
-                    {value}
+                    <span>{value}</span>
+                    {form.dailyCustomer === value && <span className="text-primary">✔️</span>}
                   </button>
                 ))}
               </div>
