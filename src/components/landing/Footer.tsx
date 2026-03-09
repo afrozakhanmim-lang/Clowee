@@ -9,8 +9,8 @@ const Footer = () => (
             <span className="font-heading font-bold text-white text-lg">Clowee</span>
           </div>
           <p className="text-sm mb-4 text-white/90">Smart claw machine partnership for restaurants in Bangladesh.</p>
-          <a href="mailto:info@clowee.com" className="text-sm text-white/90 hover:text-white transition-colors">
-            info@clowee.com
+          <a href="mailto:hello@sohub.com.bd" className="text-sm text-white/90 hover:text-white transition-colors">
+            hello@sohub.com.bd
           </a>
         </div>
 
