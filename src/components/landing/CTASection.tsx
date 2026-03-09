@@ -2,7 +2,6 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { motion } from "framer-motion";
 import { toast } from "sonner";
 import { z } from "zod";
@@ -86,17 +85,23 @@ const CTASection = () => {
               <Input id="phone" value={form.phone} onChange={(e) => update("phone", e.target.value)} type="tel" maxLength={20} />
             </div>
             <div>
-              <Label htmlFor="dailyCustomer" className="text-foreground">Daily Customer *</Label>
-              <Select value={form.dailyCustomer} onValueChange={(value) => update("dailyCustomer", value)}>
-                <SelectTrigger id="dailyCustomer">
-                  <SelectValue placeholder="Select daily customer count" />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectItem value="50">50</SelectItem>
-                  <SelectItem value="80">80</SelectItem>
-                  <SelectItem value="100">100</SelectItem>
-                </SelectContent>
-              </Select>
+              <Label className="text-foreground mb-3 block">Daily Customer *</Label>
+              <div className="grid grid-cols-3 gap-3">
+                {["50", "80", "100"].map((value) => (
+                  <button
+                    key={value}
+                    type="button"
+                    onClick={() => update("dailyCustomer", value)}
+                    className={`p-4 rounded-lg border-2 font-semibold transition-all ${
+                      form.dailyCustomer === value
+                        ? "border-primary bg-primary text-white"
+                        : "border-border bg-card text-foreground hover:border-primary/50"
+                    }`}
+                  >
+                    {value}
+                  </button>
+                ))}
+              </div>
             </div>
             <Button variant="hero" size="lg" type="submit" className="w-full">
               Submit Application
