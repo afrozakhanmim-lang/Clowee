@@ -15,7 +15,7 @@ const monthlyData = [
 
 const EarningsSection = () => (
   <section id="earnings" className="section-padding section-alt-bg">
-    <div className="container max-w-3xl">
+    <div className="container max-w-6xl">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -23,11 +23,11 @@ const EarningsSection = () => (
         className="text-center mb-12"
       >
         <h2 className="text-3xl md:text-4xl font-heading font-bold text-foreground mb-4">
-          How Much Can You Earn?
+          Estimated Earnings Overview
         </h2>
       </motion.div>
 
-      <div className="space-y-8">
+      <div className="grid lg:grid-cols-2 gap-8">
         {/* Weekly Earnings Table */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -36,7 +36,7 @@ const EarningsSection = () => (
           className="bg-card rounded-2xl border border-border p-6 md:p-8"
         >
           <h3 className="text-xl md:text-2xl font-heading font-bold text-foreground mb-6">
-            Weekly Earnings Overview
+            Weekly Earnings
           </h3>
           
           <div className="overflow-x-auto">
@@ -45,7 +45,7 @@ const EarningsSection = () => (
                 <tr className="border-b-2 border-border">
                   <th className="text-left py-3 px-4 font-semibold text-foreground text-sm md:text-base">Income Step</th>
                   <th className="text-left py-3 px-4 font-semibold text-foreground text-sm md:text-base hidden md:table-cell">Explanation</th>
-                  <th className="text-right py-3 px-4 font-semibold text-foreground text-sm md:text-base">Estimated Amount (BDT)</th>
+                  <th className="text-right py-3 px-4 font-semibold text-foreground text-sm md:text-base">Amount (BDT)</th>
                 </tr>
               </thead>
               <tbody>
@@ -74,7 +74,7 @@ const EarningsSection = () => (
           className="bg-card rounded-2xl border border-border p-6 md:p-8"
         >
           <h3 className="text-xl md:text-2xl font-heading font-bold text-foreground mb-6">
-            Monthly Earnings Overview
+            Monthly Earnings
           </h3>
           
           <div className="overflow-x-auto">
@@ -83,7 +83,7 @@ const EarningsSection = () => (
                 <tr className="border-b-2 border-border">
                   <th className="text-left py-3 px-4 font-semibold text-foreground text-sm md:text-base">Income Step</th>
                   <th className="text-left py-3 px-4 font-semibold text-foreground text-sm md:text-base hidden md:table-cell">Explanation</th>
-                  <th className="text-right py-3 px-4 font-semibold text-foreground text-sm md:text-base">Estimated Amount (BDT)</th>
+                  <th className="text-right py-3 px-4 font-semibold text-foreground text-sm md:text-base">Amount (BDT)</th>
                 </tr>
               </thead>
               <tbody>
