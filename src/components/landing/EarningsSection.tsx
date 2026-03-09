@@ -11,6 +11,7 @@ const monthlyData = [
   { step: "Monthly Revenue (30 Days)", explanation: "৳3,000 × 30 days", amount: "≈ ৳90,000 per month" },
   { step: "Estimated Net Profit", explanation: "Profit after basic operating costs", amount: "৳45,000 – ৳50,000" },
   { step: "Partner Profit Share (50%)", explanation: "Partner receives 50% of the net profit", amount: "৳22,000 – ৳25,000 per month" },
+  { step: "", explanation: "", amount: "" },
 ];
 
 const EarningsSection = () => (
@@ -33,9 +34,9 @@ const EarningsSection = () => (
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="bg-card rounded-2xl border border-border p-6 md:p-8"
+          className="bg-card rounded-2xl border border-border p-4 md:p-5 h-full"
         >
-          <h3 className="text-xl md:text-2xl font-heading font-bold text-foreground mb-6">
+          <h3 className="text-lg md:text-xl font-heading font-bold text-foreground mb-4">
             Weekly Earnings
           </h3>
           
@@ -43,20 +44,20 @@ const EarningsSection = () => (
             <table className="w-full border-collapse">
               <thead>
                 <tr className="border-b-2 border-border">
-                  <th className="text-left py-3 px-4 font-semibold text-foreground text-sm md:text-base">Income Step</th>
-                  <th className="text-left py-3 px-4 font-semibold text-foreground text-sm md:text-base hidden md:table-cell">Explanation</th>
-                  <th className="text-right py-3 px-4 font-semibold text-foreground text-sm md:text-base">Amount (BDT)</th>
+                  <th className="text-left py-2 px-2 font-semibold text-foreground text-xs md:text-sm">Income Step</th>
+                  <th className="text-left py-2 px-2 font-semibold text-foreground text-xs md:text-sm hidden md:table-cell">Explanation</th>
+                  <th className="text-right py-2 px-2 font-semibold text-foreground text-xs md:text-sm">Amount (BDT)</th>
                 </tr>
               </thead>
               <tbody>
                 {weeklyData.map((row) => (
                   <tr key={row.step} className="border-b border-border/50">
-                    <td className="py-4 px-4 text-foreground">
-                      <div className="font-medium text-sm md:text-base">{row.step}</div>
+                    <td className="py-3 px-2 text-foreground">
+                      <div className="font-medium text-xs md:text-sm">{row.step}</div>
                       <div className="text-xs text-muted-foreground md:hidden mt-1">{row.explanation}</div>
                     </td>
-                    <td className="py-4 px-4 text-sm text-muted-foreground hidden md:table-cell">{row.explanation}</td>
-                    <td className="py-4 px-4 text-right text-sm md:text-base font-bold text-foreground">
+                    <td className="py-3 px-2 text-xs text-muted-foreground hidden md:table-cell">{row.explanation}</td>
+                    <td className="py-3 px-2 text-right text-xs md:text-sm font-bold text-foreground">
                       {row.amount}
                     </td>
                   </tr>
@@ -71,9 +72,9 @@ const EarningsSection = () => (
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="bg-card rounded-2xl border border-border p-6 md:p-8"
+          className="bg-card rounded-2xl border border-border p-4 md:p-5 h-full"
         >
-          <h3 className="text-xl md:text-2xl font-heading font-bold text-foreground mb-6">
+          <h3 className="text-lg md:text-xl font-heading font-bold text-foreground mb-4">
             Monthly Earnings
           </h3>
           
@@ -81,20 +82,20 @@ const EarningsSection = () => (
             <table className="w-full border-collapse">
               <thead>
                 <tr className="border-b-2 border-border">
-                  <th className="text-left py-3 px-4 font-semibold text-foreground text-sm md:text-base">Income Step</th>
-                  <th className="text-left py-3 px-4 font-semibold text-foreground text-sm md:text-base hidden md:table-cell">Explanation</th>
-                  <th className="text-right py-3 px-4 font-semibold text-foreground text-sm md:text-base">Amount (BDT)</th>
+                  <th className="text-left py-2 px-2 font-semibold text-foreground text-xs md:text-sm">Income Step</th>
+                  <th className="text-left py-2 px-2 font-semibold text-foreground text-xs md:text-sm hidden md:table-cell">Explanation</th>
+                  <th className="text-right py-2 px-2 font-semibold text-foreground text-xs md:text-sm">Amount (BDT)</th>
                 </tr>
               </thead>
               <tbody>
-                {monthlyData.map((row) => (
-                  <tr key={row.step} className="border-b border-border/50">
-                    <td className="py-4 px-4 text-foreground">
-                      <div className="font-medium text-sm md:text-base">{row.step}</div>
+                {monthlyData.map((row, idx) => (
+                  <tr key={idx} className="border-b border-border/50">
+                    <td className="py-3 px-2 text-foreground">
+                      <div className="font-medium text-xs md:text-sm">{row.step}</div>
                       <div className="text-xs text-muted-foreground md:hidden mt-1">{row.explanation}</div>
                     </td>
-                    <td className="py-4 px-4 text-sm text-muted-foreground hidden md:table-cell">{row.explanation}</td>
-                    <td className="py-4 px-4 text-right text-sm md:text-base font-bold text-foreground">
+                    <td className="py-3 px-2 text-xs text-muted-foreground hidden md:table-cell">{row.explanation}</td>
+                    <td className="py-3 px-2 text-right text-xs md:text-sm font-bold text-foreground">
                       {row.amount}
                     </td>
                   </tr>
