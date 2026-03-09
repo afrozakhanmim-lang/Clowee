@@ -1,67 +1,79 @@
 import { motion } from "framer-motion";
 import { Play, MapPin } from "lucide-react";
 import { useState } from "react";
+import chnImg from "@/assets/chn.jpg";
+import pbgulsanImg from "@/assets/pbgulsan.jpg";
+import chikcliImg from "@/assets/Chikcli.jpg";
+import diningWariImg from "@/assets/dininglounge-wari.webp";
+import pizzaburgMirpurImg from "@/assets/pizzaburg-mirpur1.jpg";
+import caferioMohammadpurImg from "@/assets/caferio-mohammadpur.jpg";
+import caferioUttaraImg from "@/assets/caferio-uttara.jpg";
+import foodplexImg from "@/assets/foodplex.dhan.jpg";
+import diningNarayanganjImg from "@/assets/dininglounge-narayanganj.webp";
+import diningKhilgaonImg from "@/assets/d_l.jpg";
+import bailyDeliImg from "@/assets/baily-deli3 copy.jpg";
+import chjImg from "@/assets/chj.jpg";
 
 const partners = [
   {
     name: "Chillox Nasirabad",
     location: "Chattogram",
-    image: "/src/assets/chn.jpg",
+    image: chnImg,
   },
   {
     name: "Pizzaburg Gulshan",
     location: "Gulshan-1, Dhaka",
-    image: "/src/assets/pbgulsan.jpg",
+    image: pbgulsanImg,
   },
   {
     name: "Chickli, Rangpur",
     location: "Rangpur",
-    image: "/src/assets/Chikcli.jpg",
+    image: chikcliImg,
   },
   {
     name: "The Dinning Lounge Wari",
     location: "Wari, Dhaka",
-    image: "/src/assets/dininglounge-wari.webp",
+    image: diningWariImg,
   },
   {
     name: "Pizzaburg Dhanmondi",
     location: "Satmasjid Road, Dhaka",
-    image: "/src/assets/pizzaburg-mirpur1.jpg",
+    image: pizzaburgMirpurImg,
   },
   {
     name: "Waffle Wala",
     location: "Dhanmondi Dhaka",
-    image: "/src/assets/caferio-mohammadpur.jpg",
+    image: caferioMohammadpurImg,
   },
   {
     name: "Cafe Rio Uttara",
     location: "Uttara, Dhaka",
-    image: "/src/assets/caferio-uttara.jpg",
+    image: caferioUttaraImg,
   },
   {
     name: "FoodPlex",
     location: "Khan ABC Tradeplex,Dhaka",
-    image: "/src/assets/foodplex.dhan.jpg",
+    image: foodplexImg,
   },
   {
     name: "The Dinning Lounge Narayanganj",
     location: "Narayanganj, Dhaka",
-    image: "/src/assets/dininglounge-narayanganj.webp",
+    image: diningNarayanganjImg,
   },
   {
     name: "The Dinning Lounge Khilgaon",
     location: "Shotodol Rose Heights, Dhaka",
-    image: "/src/assets/d_l.jpg",
+    image: diningKhilgaonImg,
   },
   {
     name: "Baily Deli",
     location: "Baily Road, Dhaka",
-    image: "/src/assets/baily-deli3 copy.jpg",
+    image: bailyDeliImg,
   },
   {
     name: "Chillox Jamal Khan",
     location: "Jamal Khan, Chattogram",
-    image: "/src/assets/chj.jpg",
+    image: chjImg,
   },
 ];
 
