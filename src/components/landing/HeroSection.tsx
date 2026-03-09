@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
-import heroImage from "@/assets/sohub-clowee-DUY35_tt.png";
+import heroImage from "@/assets/hero-image.jpeg";
 
 const HeroSection = () => {
   const scrollTo = (id: string) => document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
