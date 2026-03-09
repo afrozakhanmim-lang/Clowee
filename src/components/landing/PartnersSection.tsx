@@ -192,7 +192,7 @@ const PartnersSection = () => {
           {videos.map((video, index) => (
             <motion.div
               key={video.title}
-              className="rounded-xl overflow-hidden border border-border bg-card shadow-sm cursor-pointer group"
+              className="rounded-xl overflow-hidden border-2 border-primary bg-card shadow-lg cursor-pointer group"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
