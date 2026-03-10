@@ -36,8 +36,8 @@ const ProfitTable = ({ title, data, isWeekly }: { title: string; data: typeof we
         I3 Technologies Business Model(Use-Case)
       </h3>
       <p className="text-center text-xs text-gray-600 mt-1">
-        ABC Company<br />
-        (Daily/Monthly Report)
+        Sohub<br />
+        (<Weekly></Weekly>/Monthly Report)
       </p>
     </div>
     <div className="bg-[#E189A6] px-3 py-1 text-center">
