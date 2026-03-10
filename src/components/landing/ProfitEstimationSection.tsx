@@ -102,7 +102,7 @@ const ProfitEstimationSection = () => (
         </h2>
       </motion.div>
 
-      <div className="grid lg:grid-cols-2 gap-0">
+      <div className="grid lg:grid-cols-2 gap-4">
         <motion.div
           initial={{ opacity: 0, x: -20 }}
           whileInView={{ opacity: 1, x: 0 }}
