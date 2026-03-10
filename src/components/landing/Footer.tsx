@@ -1,3 +1,5 @@
+import { Facebook, Youtube, Globe } from "lucide-react";
+
 const Footer = () => (
   <footer className="py-12 px-4" style={{ backgroundColor: '#E291BE' }}>
     <div className="container">
@@ -12,6 +14,22 @@ const Footer = () => (
           <a href="mailto:hello@sohub.com.bd" className="text-sm text-white/90 hover:text-white transition-colors">
             hello@sohub.com.bd
           </a>
+          
+          {/* Social Links */}
+          <div className="flex gap-3 mt-4">
+            <a href="https://i3technologies.com.bd" target="_blank" rel="noopener noreferrer" 
+               className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center hover:bg-white/30 transition-colors">
+              <Globe className="w-4 h-4 text-white" />
+            </a>
+            <a href="https://youtube.com/@i3technologies" target="_blank" rel="noopener noreferrer" 
+               className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center hover:bg-white/30 transition-colors">
+              <Youtube className="w-4 h-4 text-white" />
+            </a>
+            <a href="https://facebook.com/i3technologiesbd" target="_blank" rel="noopener noreferrer" 
+               className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center hover:bg-white/30 transition-colors">
+              <Facebook className="w-4 h-4 text-white" />
+            </a>
+          </div>
         </div>
 
         {/* Quick Links */}

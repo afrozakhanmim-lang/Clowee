@@ -6,9 +6,6 @@ const specs = [
   { icon: Package, label: "Machine Load Capacity", value: "50 kg" },
   { icon: Zap, label: "Machine Power Requirement", value: "220V AC" },
   { icon: ArrowUpDown, label: "Machine Height", value: "180 cm" },
-  { icon: ArrowLeftRight, label: "Machine Width", value: "90 cm" },
-  { icon: Layers, label: "Machine Depth", value: "90 cm" },
-  { icon: Zap, label: "Operating Voltage", value: "220V / 50Hz" },
 ];
 
 const MachineSpecsSection = () => (
@@ -35,12 +32,13 @@ const MachineSpecsSection = () => (
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
+          className="flex justify-center"
         >
-          <div className="rounded-2xl overflow-hidden shadow-xl">
+          <div className="rounded-2xl overflow-hidden shadow-xl max-w-lg w-full">
             <img
               src={machineImage}
               alt="Clowee Claw Machine"
-              className="w-full h-auto"
+              className="w-full h-auto object-cover"
             />
           </div>
         </motion.div>
