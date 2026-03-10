@@ -30,60 +30,62 @@ const monthlyData = [
 ];
 
 const ProfitTable = ({ title, data, isWeekly }: { title: string; data: typeof weeklyData; isWeekly?: boolean }) => (
-  <div className="bg-white rounded-lg border border-gray-200 overflow-hidden shadow-sm w-full">
-    <div className="bg-gray-50 px-3 py-2 border-b border-gray-200">
-      <h3 className="text-center font-bold text-gray-800 text-sm">
+  <div className="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100">
+    {/* Header Section */}
+    <div className="bg-gradient-to-r from-gray-50 to-gray-100 px-6 py-4 text-center border-b">
+      <h3 className="font-bold text-gray-800 text-lg mb-1">
         I3 Technologies Business Model(Use-Case)
       </h3>
-      <p className="text-center text-xs text-gray-600 mt-1">
+      <p className="text-sm text-gray-600">
         Sohub<br />
         (Weekly Report)
       </p>
     </div>
-    <div className="bg-[#E189A6] px-3 py-1 text-center">
-      <h4 className="font-semibold text-white text-sm">I3 Technologies & ABC Company</h4>
+    
+    {/* Company Header */}
+    <div className="bg-gradient-to-r from-pink-400 to-pink-500 px-6 py-3 text-center">
+      <h4 className="font-semibold text-white text-base">I3 Technologies & ABC Company</h4>
     </div>
-    <div className="overflow-x-auto">
-      <table className="w-full text-xs">
-        <thead>
-          <tr className="bg-blue-100">
-            <th className="text-left px-3 py-1 font-semibold text-gray-800 border-r border-gray-300"></th>
-            <th className="text-center px-3 py-1 font-semibold text-gray-800 border-r border-gray-300 bg-blue-200">
-              {isWeekly ? 'Per Week (approx.)' : 'Per Month (approx.)'}
-            </th>
-          </tr>
-        </thead>
-        <tbody>
-          {data.map((row, index) => {
-            let bgColor = 'bg-white';
-            let textColor = 'text-gray-800';
-            
-            if (row.clowee) {
-              bgColor = 'bg-[#E189A6]';
-              textColor = 'text-white font-semibold';
-            }
-            if (row.franchise) {
-              bgColor = 'bg-green-400';
-              textColor = 'text-black font-bold';
-            }
-            if (row.payable) {
-              bgColor = 'bg-gray-200';
-              textColor = 'text-gray-800 font-semibold';
-            }
-            
-            return (
-              <tr key={index} className={`border-b border-gray-200 ${bgColor}`}>
-                <td className={`px-3 py-1 font-medium border-r border-gray-300 ${textColor} text-xs`}>
-                  {row.item}
-                </td>
-                <td className={`px-3 py-1 text-center font-semibold ${textColor} text-xs`}>
-                  {row.value}
-                </td>
-              </tr>
-            );
-          })}
-        </tbody>
-      </table>
+    
+    {/* Table Header */}
+    <div className="bg-gradient-to-r from-blue-50 to-blue-100 px-6 py-3 border-b">
+      <div className="text-center font-semibold text-gray-800">
+        {isWeekly ? 'Per Week (approx.)' : 'Per Month (approx.)'}
+      </div>
+    </div>
+    
+    {/* Table Content */}
+    <div className="divide-y divide-gray-100">
+      {data.map((row, index) => {
+        let bgColor = 'bg-white hover:bg-gray-50';
+        let textColor = 'text-gray-800';
+        
+        if (row.clowee) {
+          bgColor = 'bg-gradient-to-r from-pink-400 to-pink-500';
+          textColor = 'text-white font-semibold';
+        }
+        if (row.franchise) {
+          bgColor = 'bg-gradient-to-r from-green-400 to-green-500';
+          textColor = 'text-white font-semibold';
+        }
+        if (row.payable) {
+          bgColor = 'bg-gradient-to-r from-gray-200 to-gray-300';
+          textColor = 'text-gray-800 font-semibold';
+        }
+        
+        return (
+          <div key={index} className={`${bgColor} transition-colors duration-200`}>
+            <div className="flex justify-between items-center px-6 py-4">
+              <span className={`font-medium ${textColor} text-sm flex-1`}>
+                {row.item}
+              </span>
+              <span className={`font-bold ${textColor} text-sm text-right min-w-[100px]`}>
+                {row.value}
+              </span>
+            </div>
+          </div>
+        );
+      })}
     </div>
   </div>
 );
@@ -102,7 +104,7 @@ const ProfitEstimationSection = () => (
         </h2>
       </motion.div>
 
-      <div className="grid lg:grid-cols-2 gap-4">
+      <div className="grid lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
         <motion.div
           initial={{ opacity: 0, x: -20 }}
           whileInView={{ opacity: 1, x: 0 }}
