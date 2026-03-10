@@ -41,8 +41,8 @@ const ProfitTable = ({ title, data, isDaily }: { title: string; data: typeof dai
         (Daily/Monthly Report)
       </p>
     </div>
-    <div className="bg-purple-100 px-4 py-2 text-center">
-      <h4 className="font-semibold text-gray-800">I3 Technologies & ABC Company</h4>
+    <div className="bg-[#E189A6] px-4 py-2 text-center">
+      <h4 className="font-semibold text-white">I3 Technologies & ABC Company</h4>
     </div>
     <div className="overflow-x-auto">
       <table className="w-full text-sm">
@@ -57,16 +57,27 @@ const ProfitTable = ({ title, data, isDaily }: { title: string; data: typeof dai
         <tbody>
           {data.map((row, index) => {
             let bgColor = 'bg-white';
-            if (row.clowee) bgColor = 'bg-purple-100';
-            if (row.franchise) bgColor = 'bg-green-200';
-            if (row.payable) bgColor = 'bg-gray-100';
+            let textColor = 'text-gray-800';
+            
+            if (row.clowee) {
+              bgColor = 'bg-[#E189A6]';
+              textColor = 'text-white font-semibold';
+            }
+            if (row.franchise) {
+              bgColor = 'bg-green-400';
+              textColor = 'text-black font-bold';
+            }
+            if (row.payable) {
+              bgColor = 'bg-gray-200';
+              textColor = 'text-gray-800 font-semibold';
+            }
             
             return (
               <tr key={index} className={`border-b border-gray-200 ${bgColor}`}>
-                <td className="px-4 py-2 font-medium text-gray-800 border-r border-gray-300">
+                <td className={`px-4 py-2 font-medium border-r border-gray-300 ${textColor}`}>
                   {row.item}
                 </td>
-                <td className="px-4 py-2 text-center font-semibold text-gray-800">
+                <td className={`px-4 py-2 text-center font-semibold ${textColor}`}>
                   {row.value}
                 </td>
               </tr>

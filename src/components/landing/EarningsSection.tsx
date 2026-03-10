@@ -29,25 +29,25 @@ const monthlyData = [
 ];
 
 const ProfitTable = ({ title, data, isDaily }: { title: string; data: typeof dailyData; isDaily?: boolean }) => (
-  <div className="bg-white rounded-lg border border-gray-200 overflow-hidden shadow-sm">
-    <div className="bg-gray-50 px-4 py-3 border-b border-gray-200">
-      <h3 className="text-center font-bold text-gray-800">
+  <div className="bg-white rounded-lg border border-gray-200 overflow-hidden shadow-sm max-w-md mx-auto">
+    <div className="bg-gray-50 px-3 py-2 border-b border-gray-200">
+      <h3 className="text-center font-bold text-gray-800 text-sm">
         I3 Technologies Business Model(Use-Case)
       </h3>
-      <p className="text-center text-sm text-gray-600 mt-1">
+      <p className="text-center text-xs text-gray-600 mt-1">
         ABC Company<br />
         (Daily/Monthly Report)
       </p>
     </div>
-    <div className="bg-purple-100 px-4 py-2 text-center">
-      <h4 className="font-semibold text-gray-800">I3 Technologies & ABC Company</h4>
+    <div className="bg-purple-100 px-3 py-1 text-center">
+      <h4 className="font-semibold text-gray-800 text-sm">I3 Technologies & ABC Company</h4>
     </div>
     <div className="overflow-x-auto">
-      <table className="w-full text-sm">
+      <table className="w-full text-xs">
         <thead>
           <tr className="bg-blue-100">
-            <th className="text-left px-4 py-2 font-semibold text-gray-800 border-r border-gray-300"></th>
-            <th className="text-center px-4 py-2 font-semibold text-gray-800 border-r border-gray-300 bg-blue-200">
+            <th className="text-left px-3 py-1 font-semibold text-gray-800 border-r border-gray-300"></th>
+            <th className="text-center px-3 py-1 font-semibold text-gray-800 border-r border-gray-300 bg-blue-200">
               {isDaily ? 'Per Day (approx.)' : 'Per Month (approx.)'}
             </th>
           </tr>
@@ -60,10 +60,10 @@ const ProfitTable = ({ title, data, isDaily }: { title: string; data: typeof dai
             
             return (
               <tr key={index} className={`border-b border-gray-200 ${bgColor}`}>
-                <td className="px-4 py-2 font-medium text-gray-800 border-r border-gray-300">
+                <td className="px-3 py-1 font-medium text-gray-800 border-r border-gray-300 text-xs">
                   {row.item}
                 </td>
-                <td className="px-4 py-2 text-center font-semibold text-gray-800">
+                <td className="px-3 py-1 text-center font-semibold text-gray-800 text-xs">
                   {row.value}
                 </td>
               </tr>

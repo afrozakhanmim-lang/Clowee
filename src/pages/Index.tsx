@@ -5,6 +5,7 @@ import ProblemSection from "@/components/landing/ProblemSection";
 import SolutionSection from "@/components/landing/SolutionSection";
 import InvestmentSection from "@/components/landing/InvestmentSection";
 import EarningsSection from "@/components/landing/EarningsSection";
+import ProfitEstimationSection from "@/components/landing/ProfitEstimationSection";
 import BenefitsSection from "@/components/landing/BenefitsSection";
 import MonthlyProfitSection from "@/components/landing/MonthlyProfitSection";
 import MachineSpecsSection from "@/components/landing/MachineSpecsSection";
@@ -25,6 +26,7 @@ const Index = () => {
       <SolutionSection />
       <MachineSpecsSection />
       <EarningsSection />
+      <ProfitEstimationSection />
       <BenefitsSection />
       <MonthlyProfitSection />
       <PartnersSection />
